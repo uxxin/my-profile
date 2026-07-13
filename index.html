@@ -163,7 +163,15 @@
             display: block;
         }
 
-        /* 3D 아바타 그래픽 */
+        /* 3D 아바타 그래픽 링크 및 호버 애니메이션 추가 */
+        .avatar-link {
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            outline: none;
+            /* 링크 클릭 시 생기는 브라우저 기본 포커스 아웃라인 제거 */
+        }
+
         .avatar-container {
             position: relative;
             width: 320px;
@@ -172,6 +180,14 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
+
+            /* 호버 반응을 위한 transition 효과 추가 */
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* 아바타 영역 마우스 호버 시 커지게 설정 */
+        .avatar-link:hover .avatar-container {
+            transform: scale(1.1);
         }
 
         .avatar-3d {
@@ -423,7 +439,7 @@
     <!-- 네비게이션 바 -->
     <nav class="navbar">
         <div class="container nav-wrapper">
-            <a href="yujin_profile.html" class="nav-logo">Yujin<span> yang</span></a>
+            <a href="yujin_profile.html" class="nav-logo">Yujin<span> Yang</span></a>
             <ul class="nav-menu">
                 <li><a href="identity.html" class="nav-link">Identity</a></li>
                 <li><a href="strengths.html" class="nav-link">Core Strengths</a></li>
@@ -446,18 +462,21 @@
                     </p>
                 </div>
                 <div class="hero-visual">
-                    <div class="avatar-container">
-                        <div class="avatar-hair-back"></div>
-                        <div class="avatar-front-wrapper" style="position: relative;">
-                            <div class="avatar-3d">
-                                <div class="avatar-mouth"></div>
-                            </div>
-                            <div class="avatar-hair-front"></div>
-                            <div class="avatar-bangs">
-                                <span></span><span></span><span></span><span></span>
+                    <!-- 아바타 클릭 시 깃허브로 이동하도록 <a> 태그 추가 -->
+                    <a href="https://github.com/uxxin" target="_blank" class="avatar-link">
+                        <div class="avatar-container">
+                            <div class="avatar-hair-back"></div>
+                            <div class="avatar-front-wrapper" style="position: relative;">
+                                <div class="avatar-3d">
+                                    <div class="avatar-mouth"></div>
+                                </div>
+                                <div class="avatar-hair-front"></div>
+                                <div class="avatar-bangs">
+                                    <span></span><span></span><span></span><span></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
