@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>양유진 | 백엔드 개발자 포트폴리오</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         /* 변수 및 기본 초기화 */
         :root {
@@ -28,7 +30,8 @@
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
-            padding-top: 70px; /* 상단 고정 네비게이션 바 공간 확보 */
+            padding-top: 70px;
+            /* 상단 고정 네비게이션 바 공간 확보 */
         }
 
         /* 부드러운 스크롤 */
@@ -131,7 +134,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .hero-name-highlight span {
             font-size: 1.1rem;
             font-weight: 500;
@@ -169,7 +172,7 @@
             position: relative;
             width: 320px;
             height: 320px;
-            background: radial-gradient(circle, rgba(37,99,235,0.2) 0%, rgba(15,23,42,0) 70%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -178,14 +181,17 @@
         .avatar-3d {
             width: 200px;
             height: 200px;
-            background: #FCE8E6; /* 밝은 피부색 */
-            border-radius: 50%; /* 동그란 얼굴형 */
+            background: #FCE8E6;
+            /* 밝은 피부색 */
+            border-radius: 50%;
+            /* 동그란 얼굴형 */
             position: relative;
-            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.1), 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         /* 큰 눈 */
-        .avatar-3d::before, .avatar-3d::after {
+        .avatar-3d::before,
+        .avatar-3d::after {
             content: '';
             position: absolute;
             top: 85px;
@@ -194,8 +200,14 @@
             background: #1E293B;
             border-radius: 50%;
         }
-        .avatar-3d::before { left: 45px; }
-        .avatar-3d::after { right: 45px; }
+
+        .avatar-3d::before {
+            left: 45px;
+        }
+
+        .avatar-3d::after {
+            right: 45px;
+        }
 
         /* 미소 */
         .avatar-mouth {
@@ -217,9 +229,10 @@
             height: 280px;
             background: #654321;
             border-radius: 110px 110px 80px 80px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             z-index: -1;
         }
+
         .avatar-hair-front {
             position: absolute;
             top: -10px;
@@ -230,6 +243,7 @@
             background: #654321;
             border-radius: 100px 100px 0 0;
         }
+
         .avatar-bangs {
             position: absolute;
             top: 55px;
@@ -240,6 +254,7 @@
             display: flex;
             justify-content: space-between;
         }
+
         .avatar-bangs span {
             width: 16px;
             height: 25px;
@@ -256,7 +271,7 @@
             border-left: 4px solid var(--accent-blue);
             padding-left: 12px;
         }
-        
+
         .section-subtitle {
             font-size: 0.95rem;
             color: var(--text-muted);
@@ -266,7 +281,8 @@
 
         .hobby-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3개의 취미 카드가 나란히 배치되도록 수정 */
+            grid-template-columns: repeat(3, 1fr);
+            /* 3개의 취미 카드가 나란히 배치되도록 수정 */
             gap: 24px;
             width: 100%;
         }
@@ -426,34 +442,44 @@
             body {
                 padding-top: 60px;
             }
+
             .navbar {
                 height: 60px;
             }
+
             .nav-menu {
                 gap: 16px;
             }
+
             .hero-wrapper {
                 flex-direction: column-reverse;
                 text-align: center;
                 gap: 20px;
             }
+
             .hero-name-highlight {
                 font-size: 2.3rem;
             }
+
             .hero-title {
                 font-size: 1.5rem;
             }
+
             .hobby-container {
-                grid-template-columns: 1fr; /* 모바일에서는 세로로 한 줄씩 배치 */
+                grid-template-columns: 1fr;
+                /* 모바일에서는 세로로 한 줄씩 배치 */
                 gap: 16px;
             }
+
             .cards-wrapper {
                 flex-direction: column;
             }
+
             .card {
                 width: 100%;
                 margin-bottom: 20px;
             }
+
             .links-wrapper {
                 flex-direction: column;
                 gap: 20px;
@@ -461,6 +487,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -518,14 +545,14 @@
                     <div class="hobby-emoji">🎭</div>
                     <div class="hobby-info">
                         <h3>공연 관람</h3>
-                        <p>주말이나 여가 시간에는 뮤지컬이나 연극, 콘서트 같은 생생한 무대 공연을 보러 다녀요.</p>
+                        <p>여가 시간에는 뮤지컬이나 연극, 콘서트 같은 공연을 보러 다녀요.</p>
                     </div>
                 </div>
                 <div class="hobby-card">
                     <div class="hobby-emoji">🧳</div>
                     <div class="hobby-info">
                         <h3>여행 다니기</h3>
-                        <p>새로운 도시를 탐방하고, 꼼꼼하게 계획을 세워 떠나는 여행에서 영감을 얻습니다.</p>
+                        <p>새로운 도시를 탐방하고, 꼼꼼하게 계획을 세워 떠나는 여행을 좋아합니다.</p>
                     </div>
                 </div>
             </div>
@@ -539,17 +566,20 @@
                 <div class="card">
                     <div class="card-num">Point 01</div>
                     <h3 class="card-title">‘왜?’를 놓치지 않는 깊은 탐구력</h3>
-                    <p class="card-desc">단순히 기능을 구현하는 데 그치지 않고, 프레임워크와 언어의 동작 원리를 파고듭니다. 더 나은 리소스 최적화와 안정적인 데이터 처리를 위해 끊임없이 본질을 추구합니다.</p>
+                    <p class="card-desc">단순히 기능을 구현하는 데 그치지 않고, 프레임워크와 언어의 동작 원리를 파고듭니다. 더 나은 리소스 최적화와 안정적인 데이터 처리를 위해
+                        끊임없이 본질을 추구합니다.</p>
                 </div>
                 <div class="card">
                     <div class="card-num">Point 02</div>
                     <h3 class="card-title">UX를 이해하는 백엔드 역량</h3>
-                    <p class="card-desc">디자인과 클라이언트 사이드의 메커니즘을 명확히 인지하고 있습니다. 이를 바탕으로 사용자 경험을 저해하지 않는 가장 빠르고 이상적인 데이터 흐름과 API 구조를 설계합니다.</p>
+                    <p class="card-desc">디자인과 클라이언트 사이드의 메커니즘을 명확히 인지하고 있습니다. 이를 바탕으로 사용자 경험을 저해하지 않는 가장 빠르고 이상적인 데이터
+                        흐름과 API 구조를 설계합니다.</p>
                 </div>
                 <div class="card">
                     <div class="card-num">Point 03</div>
                     <h3 class="card-title">매끄러운 소통과 협업의 연결고리</h3>
-                    <p class="card-desc">디자이너와 프론트엔드 개발자의 언어를 완벽히 공유합니다. 직군 간의 해석 차이를 좁히고 협업 프로세스를 부드럽게 잇는 단단한 가교 역할을 자처합니다.</p>
+                    <p class="card-desc">디자이너와 프론트엔드 개발자의 언어를 완벽히 공유합니다. 직군 간의 해석 차이를 좁히고 협업 프로세스를 부드럽게 잇는 단단한 가교 역할을
+                        자처합니다.</p>
                 </div>
             </div>
         </div>
@@ -569,6 +599,7 @@
                     <div class="tech-group-title">Frontend</div>
                     <span class="tech-badge">JavaScript</span>
                     <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">React</span>
                     <span class="tech-badge">Next.js</span>
                 </div>
                 <div class="tech-group">
@@ -606,4 +637,5 @@
         window.addEventListener("load", reveal);
     </script>
 </body>
+
 </html>
