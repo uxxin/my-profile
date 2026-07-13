@@ -277,25 +277,60 @@
             gap: 10px;
         }
 
+        /* 다짐 리스트 가로 배열 및 카드 스타일화 */
         .goal-list {
             list-style: none;
             display: flex;
-            flex-direction: column;
-            gap: 16px;
+            flex-direction: row;
+            /* 가로로 한 줄 배열 */
+            gap: 20px;
+            width: 100%;
         }
 
         .goal-list li {
+            flex: 1;
+            /* 3개 카드가 동일한 너비를 가짐 */
             background: var(--bg-card);
-            padding: 16px 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-blue);
+            padding: 32px 24px;
+            border-radius: 12px;
+            border-top: 4px solid var(--accent-blue);
+            /* 상단 포인트 테두리 */
+
+            /* 카드 내부 콘텐츠 중앙 정렬 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
             font-size: 0.98rem;
-            text-align: left;
-            transition: border-color 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .goal-list li:hover {
-            border-left-color: var(--accent-glow);
+            border-top-color: var(--accent-glow);
+            transform: translateY(-5px);
+            /* 호버 시 위로 떠오르는 모션 */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 카드 내부 텍스트 구성용 스타일 */
+        .goal-list li .emoji {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+        }
+
+        .goal-list li .goal-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .goal-list li .goal-desc {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            word-break: keep-all;
         }
 
         .footer {
@@ -374,6 +409,12 @@
                 flex-direction: column;
                 gap: 20px;
             }
+
+            /* 모바일 화면에서는 카드들을 세로로 나열 */
+            .goal-list {
+                flex-direction: column;
+                gap: 16px;
+            }
         }
     </style>
 </head>
@@ -426,9 +467,21 @@
                 <div class="grid-left intro-box">
                     <h2>SSAFY에 임하는 다짐</h2>
                     <ul class="goal-list">
-                        <li>💯 <b>출석률 100% 도전!</b> </li>
-                        <li>💻 <b>1일 1커밋 지키기!</b></li>
-                        <li>🙋 <b>모르는 건 주저 없이 물어보기!</b></li>
+                        <li>
+                            <div class="emoji">💯</div>
+                            <div class="goal-title">출석률 100% 도전!</div>
+                            <div class="goal-desc">성실함은 기본! 지각이나 결석 없이 매일 뜨겁게 몰입하여 성장의 기본 루틴을 지켜내겠습니다.</div>
+                        </li>
+                        <li>
+                            <div class="emoji">💻</div>
+                            <div class="goal-title">1일 1커밋 지키기!</div>
+                            <div class="goal-desc">어제보다 발전한 오늘을 증명하기 위해, 타협하지 않고 매일 기록하고 코드를 다듬겠습니다.</div>
+                        </li>
+                        <li>
+                            <div class="emoji">🙋</div>
+                            <div class="goal-title">모르는 건 주저 없이!</div>
+                            <div class="goal-desc">혼자 끙끙 앓기보다 적극적인 소통과 질문을 통해 배움을 확장하고 정답을 집요하게 찾아내겠습니다.</div>
+                        </li>
                     </ul>
                 </div>
             </div>
