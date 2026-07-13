@@ -15,6 +15,9 @@
             --accent-glow: #3B82F6;
             --text-main: #F8FAFC;
             --text-muted: #94A3B8;
+            /* 칩 태그 스타일을 위한 변수 추가 */
+            --chip-bg: rgba(30, 41, 59, 0.7);
+            --chip-border: rgba(148, 163, 184, 0.2);
         }
 
         * {
@@ -131,7 +134,8 @@
             font-size: 3rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
+            /* 태그와의 간격을 위해 소폭 수정 */
             background: linear-gradient(135deg, #FFF 30%, var(--accent-glow) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -146,6 +150,34 @@
             margin-left: 12px;
             letter-spacing: 1px;
             vertical-align: middle;
+        }
+
+        /* 칩 태그 스타일 구조 */
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .tag-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background-color: var(--chip-bg);
+            border: 1px solid var(--chip-border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #E2E8F0;
+            letter-spacing: -0.3px;
+            transition: all 0.2s ease;
+        }
+
+        .tag-chip:hover {
+            border-color: var(--accent-glow);
+            color: #FFF;
+            background-color: rgba(37, 99, 235, 0.1);
         }
 
         .hero-title {
@@ -188,7 +220,6 @@
             white-space: nowrap;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(59, 130, 246, 0.4);
             z-index: 999;
-            /* 아바타 머리카락 등 다른 요소보다 무조건 위로 */
 
             opacity: 0;
             visibility: hidden;
@@ -229,7 +260,6 @@
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* 호버 시 아바타 본체 부드럽게 커짐 */
         .avatar-link:hover .avatar-container {
             transform: scale(1.05);
         }
@@ -448,6 +478,11 @@
                 font-size: 2.3rem;
             }
 
+            .hero-tags {
+                justify-content: center;
+                /* 모바일에서는 칩 태그 중앙 정렬 */
+            }
+
             .hero-title {
                 font-size: 1.5rem;
             }
@@ -466,10 +501,8 @@
                 gap: 16px;
             }
 
-            /* 모바일 화면 말풍선 좌표 미세 세팅 */
             .avatar-link {
                 margin: 0 auto;
-                /* 중앙 정렬 보장 */
             }
 
             .avatar-link::before {
@@ -500,10 +533,19 @@
     <section class="hero-section">
         <div class="container">
 
-            <!-- 1층: 양유진 Backend Developer + 캐치프레이즈 + 아바타 -->
+            <!-- 1층: 양유진 Backend Developer + 칩 태그 + 캐치프레이즈 + 아바타 -->
             <div class="hero-wrapper">
                 <div class="hero-content">
                     <h1 class="hero-name-highlight">양유진<span>Backend Developer</span></h1>
+
+                    <!-- 추가된 칩 태그 영역 -->
+                    <div class="hero-tags">
+                        <span class="tag-chip">⚽ 월드컵 베이비</span>
+                        <span class="tag-chip">🧠 ISTJ / ISFJ</span>
+                        <span class="tag-chip">💻 정보통신공학과</span>
+                    </div>
+
+                    </br>
                     <p class="hero-title">
                         사용자의 눈에 보이는 경험에서 시작해,
                         <span class="point">보이지 않는 백엔드의 탄탄한 구조를 설계합니다.</span>
