@@ -163,31 +163,75 @@
             display: block;
         }
 
-        /* 3D 아바타 그래픽 링크 및 호버 애니메이션 추가 */
         .avatar-link {
             display: inline-block;
             text-decoration: none;
             cursor: pointer;
             outline: none;
-            /* 링크 클릭 시 생기는 브라우저 기본 포커스 아웃라인 제거 */
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .avatar-link::before {
+            content: '깃허브 친구해요 ! 🙋';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%) translateY(5px);
+            background-color: var(--accent-blue);
+            color: #FFF;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(59, 130, 246, 0.4);
+            z-index: 999;
+            /* 아바타 머리카락 등 다른 요소보다 무조건 위로 */
+
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, visibility 0.25s;
+        }
+
+        .avatar-link::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%) translateY(5px);
+            border-width: 8px 8px 0 8px;
+            border-style: solid;
+            border-color: var(--accent-blue) transparent transparent transparent;
+            z-index: 999;
+
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, visibility 0.25s;
+        }
+
+        .avatar-link:hover::before,
+        .avatar-link:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
         }
 
         .avatar-container {
             position: relative;
-            width: 320px;
-            height: 320px;
+            width: 100%;
+            height: 100%;
             background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
-            display: inline-flex;
+            display: flex;
             justify-content: center;
             align-items: center;
-
-            /* 호버 반응을 위한 transition 효과 추가 */
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* 아바타 영역 마우스 호버 시 커지게 설정 */
+        /* 호버 시 아바타 본체 부드럽게 커짐 */
         .avatar-link:hover .avatar-container {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .avatar-3d {
@@ -269,7 +313,6 @@
             border-radius: 0 0 8px 8px;
         }
 
-        /* 2층 레이아웃: 다짐 영역 수정 스타일 */
         .bootcamp-grid {
             display: table;
             width: 100%;
@@ -293,26 +336,21 @@
             gap: 10px;
         }
 
-        /* 다짐 리스트 가로 배열 및 카드 스타일화 */
         .goal-list {
             list-style: none;
             display: flex;
             flex-direction: row;
-            /* 가로로 한 줄 배열 */
             gap: 20px;
             width: 100%;
         }
 
         .goal-list li {
             flex: 1;
-            /* 3개 카드가 동일한 너비를 가짐 */
             background: var(--bg-card);
             padding: 32px 24px;
             border-radius: 12px;
             border-top: 4px solid var(--accent-blue);
-            /* 상단 포인트 테두리 */
 
-            /* 카드 내부 콘텐츠 중앙 정렬 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -325,11 +363,9 @@
         .goal-list li:hover {
             border-top-color: var(--accent-glow);
             transform: translateY(-5px);
-            /* 호버 시 위로 떠오르는 모션 */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* 카드 내부 텍스트 구성용 스타일 */
         .goal-list li .emoji {
             font-size: 2.2rem;
             margin-bottom: 14px;
@@ -406,7 +442,7 @@
 
             .hero-content {
                 text-align: center;
-                margin-bottom: 30px;
+                margin-bottom: 60px;
             }
 
             .hero-name-highlight {
@@ -426,10 +462,23 @@
                 gap: 20px;
             }
 
-            /* 모바일 화면에서는 카드들을 세로로 나열 */
             .goal-list {
                 flex-direction: column;
                 gap: 16px;
+            }
+
+            /* 모바일 화면 말풍선 좌표 미세 세팅 */
+            .avatar-link {
+                margin: 0 auto;
+                /* 중앙 정렬 보장 */
+            }
+
+            .avatar-link::before {
+                top: -20px;
+            }
+
+            .avatar-link::after {
+                top: 20px;
             }
         }
     </style>
@@ -462,7 +511,6 @@
                     </p>
                 </div>
                 <div class="hero-visual">
-                    <!-- 아바타 클릭 시 깃허브로 이동하도록 <a> 태그 추가 -->
                     <a href="https://github.com/uxxin" target="_blank" class="avatar-link">
                         <div class="avatar-container">
                             <div class="avatar-hair-back"></div>
